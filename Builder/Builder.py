@@ -307,6 +307,7 @@ class Builder(ABC):
 
 
 
+
 class PizzaBuilder(Builder):
     def __init__(self) -> None:
         """
@@ -383,6 +384,8 @@ class Pizzeria():
     def builder(self, builder: Builder) -> None:
         self._builder = builder
 
+    #Productos que están disponibles en la carta de la pizzería
+
     def pizza_pepperoni(self) -> None:
         self.builder.masa(MasaGruesa())
         self.builder.base(BaseTomate())
@@ -428,6 +431,8 @@ class Pizzeria():
         self.builder.extras(ExtraTrufa())
         self.builder.extras(ExtraCaviar())
     
+    #Pizza personalizada
+
     def personalizada(self) -> None:
         print("Elige los ingredientes de tu pizza:")
         print("1. Masa")
@@ -535,6 +540,7 @@ class Pizzeria():
             pizzeria.builder.extras(ExtraCaviar())
 
 
+
 if __name__ == "__main__":
     pizzeria = Pizzeria()
     builder = PizzaBuilder()
@@ -601,19 +607,5 @@ if __name__ == "__main__":
         print("Preparando su pizza...")
         time.sleep(2)
         builder.pizza.list_parts()
+
         guardar_pizza_en_csv("Personalizada", builder.pizza.parts)
-        
-        
-
-        
-
-        
-
-        
-
-        
-
-
-
-        
-
