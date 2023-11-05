@@ -2,7 +2,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any
 import time
-
+from auxiliar import guardar_pizza_en_csv
 #Creamos las interfaces de cada tipo de producto que serán implementadas por las clases concretas de cada producto.
 
 class Masa(ABC):
@@ -414,7 +414,7 @@ class Pizzeria():
         self.builder.ingredientes(IngredienteChampiñones())
         self.builder.ingredientes(IngredientePina())
         self.builder.coccion(CoccionLeña())
-        self.builer.maridajes(MaridajeCerveza())
+        self.builder.maridajes(MaridajeCerveza())
         self.builder.presentacion(PresentacionTroceada())
         
     def pizza_especial(self) -> None:
@@ -561,7 +561,7 @@ if __name__ == "__main__":
             print(i)
         eleccion = str(input("¿Qué pizza desea pedir?: "))
 
-        if eleccion== "Jamón y queso":
+        if eleccion == "Jamón y queso":
             print("Preparando una pizza de Jamón y queso...")
             pizzeria.pizza_jamon_queso()
             time.sleep(2)
@@ -572,6 +572,7 @@ if __name__ == "__main__":
             pizzeria.pizza_pepperoni()
             time.sleep(2)
             builder.pizza.list_parts()
+            
         
         elif eleccion == "Hawaiana":
             print("Preparando una pizza Hawaiana...")
@@ -593,6 +594,8 @@ if __name__ == "__main__":
         
         else:
             print("No tenemos esa pizza en la carta, lo sentimos.")
+        
+        guardar_pizza_en_csv(eleccion, builder.pizza.parts)
     
     elif opcion == "2":
         pizzeria.personalizada()
