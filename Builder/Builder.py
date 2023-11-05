@@ -37,6 +37,8 @@ class MasaFermentada(Masa):
     def tipo_masa(self) -> str:
         return "Masa Fermentada"
     
+
+    
 class Base(ABC):
     """
     La interfaz Base declara operaciones para todos los tipos de objetos Base.
@@ -69,6 +71,8 @@ class BaseEspecial(Base):
 
     def tipo_base(self) -> str:
         return "Base Especial"
+    
+
 
 class Ingredientes(ABC):
     """
@@ -118,6 +122,8 @@ class IngredientePina(Ingredientes):
 
     def tipo_ingredientes(self) -> str:
         return "Piña"
+    
+
 
 class Coccion(ABC):
     """
@@ -152,6 +158,8 @@ class CoccionPiedra(Coccion):
     def tipo_coccion(self) -> str:
         return "Piedra"
 
+
+
 class Presentacion(ABC):
     """
     La interfaz Presentacion declara operaciones para todos los tipos de objetos Presentacion.
@@ -184,6 +192,8 @@ class PresentacionTroceada(Presentacion):
 
     def tipo_presentacion(self) -> str:
         return "Troceada"
+
+
 
 class Maridajes(ABC):
     """
@@ -218,6 +228,8 @@ class MaridajeCoctel(Maridajes):
     def tipo_maridajes(self) -> str:
         return "Coctel"
 
+
+
 class Extras(ABC):
     """
     La interfaz Extras declara operaciones para todos los tipos de objetos Extras.
@@ -250,6 +262,8 @@ class ExtraCaviar(Extras):
 
     def tipo_extras(self) -> str:
         return "Caviar"
+
+
 
 class Builder(ABC):
 
@@ -291,6 +305,8 @@ class Builder(ABC):
         pass
 
 
+
+
 class PizzaBuilder(Builder):
     def __init__(self) -> None:
         """
@@ -328,6 +344,8 @@ class PizzaBuilder(Builder):
     def extras(self, extras: Extras) -> None:
         self._pizza.add(extras.tipo_extras())
 
+
+
 class Pizza():
     """
     Es el producto final que se obtiene de la construcción. 
@@ -346,6 +364,8 @@ class Pizza():
     def list_parts(self) -> None:
         print(f"Pizza: {', '.join(self.parts)}", end="")
 
+
+
 class Pizzeria():
 
     """
@@ -363,11 +383,20 @@ class Pizzeria():
     def builder(self, builder: Builder) -> None:
         self._builder = builder
 
-    def build_pizza(self) -> None:
-        self.builder.masa()
-        self.builder.base()
-        self.builder.ingredientes()
-        self.builder.coccion()
-        self.builder.presentacion()
-        self.builder.maridajes()
-        self.builder.extras()
+    def pizza_pepperoni(self) -> None:
+        self.builder.masa(MasaGruesa())
+        self.builder.base(BaseTomate())
+        self.builder.ingredientes(IngredientePepperoni())
+        self.builder.ingredientes(IngredienteQueso())
+        self.builder.coccion(CoccionHorno())
+        self.builder.presentacion(PresentacionCaja())
+
+
+if __name__ == "__main__":
+    pizzeria = Pizzeria()
+    builder = PizzaBuilder()
+    pizzeria.builder = builder
+
+    print("Pizza Pepperoni:")
+    pizzeria.pizza_pepperoni()
+    builder.pizza.list_parts()
