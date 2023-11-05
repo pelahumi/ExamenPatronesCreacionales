@@ -13,6 +13,30 @@ class Masa(ABC):
     def tipo_masa(self) -> str:
         pass
 
+class MasaFina(Masa):
+    """
+    Las clases concretas de Masa implementan la interfaz Masa.
+    """
+
+    def tipo_masa(self) -> str:
+        return "Masa Fina"
+
+class MasaGruesa(Masa):
+    """
+    Las clases concretas de Masa implementan la interfaz Masa.
+    """
+
+    def tipo_masa(self) -> str:
+        return "Masa Gruesa"
+
+class MasaFermentada(Masa):
+    """
+    Las clases concretas de Masa implementan la interfaz Masa.
+    """
+
+    def tipo_masa(self) -> str:
+        return "Masa Fermentada"
+
 class Base(ABC):
     """
     La interfaz Base declara operaciones para todos los tipos de objetos Base.
