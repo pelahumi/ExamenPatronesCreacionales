@@ -428,6 +428,112 @@ class Pizzeria():
         self.builder.extras(ExtraBordeQueso())
         self.builder.extras(ExtraTrufa())
         self.builder.extras(ExtraCaviar())
+    
+    def personalizada(self) -> None:
+        print("Elige los ingredientes de tu pizza:")
+        print("1. Masa")
+        for i in MASAS:
+            print(i)
+        seleccion_masa = input("Introduzca el número de la opción que desea: ")
+        if seleccion_masa == "1":
+            print("Ha elegido Masa Fina")
+            self.builder.masa(MasaFina())
+        elif seleccion_masa == "2":
+            print("Ha elegido Masa Gruesa")
+            self.builder.masa(MasaGruesa())
+        elif seleccion_masa == "3":
+            print("Ha elegido Masa Fermentada")
+            self.builder.masa(MasaFermentada())
+        
+        print("2. Base")
+        for i in BASES:
+            print(i)
+        base = input("Introduzca el número de la opción que desea: ")
+        if base == "1":
+            print("Ha elegido Base de Tomate")
+            pizzeria.builder.base(BaseTomate())
+        elif base == "2":
+            print("Ha elegido Base Vegana")
+            pizzeria.builder.base(BaseVegana())
+        elif base == "3":
+            print("Ha elegido Base Especial")
+            pizzeria.builder.base(BaseEspecial())
+        
+        print("3. Ingredientes")
+        for i in INGREDIENTES:
+            print(i)
+        ingredientes = input("Introduzca el número de la opción que desea: ")
+        if ingredientes == "1":
+            print("Ha elegido Queso")
+            pizzeria.builder.ingredientes(IngredienteQueso())
+        elif ingredientes == "2":
+            print("Ha elegido Jamón")
+            pizzeria.builder.ingredientes(IngredienteJamon())
+        elif ingredientes == "3":
+            print("Ha elegido Pepperoni")
+            pizzeria.builder.ingredientes(IngredientePepperoni())
+        elif ingredientes == "4":
+            print("Ha elegido Champiñones")
+            pizzeria.builder.ingredientes(IngredienteChampiñones())
+        elif ingredientes == "5":
+            print("Ha elegido Piña")
+            pizzeria.builder.ingredientes(IngredientePina())
+        
+        print("4. Cocción")
+        for i in COCCION:
+            print(i)
+        coccion = input("Introduzca el número de la opción que desea: ")
+        if coccion == "1":
+            print("Ha elegido Horno")
+            pizzeria.builder.coccion(CoccionHorno())
+        elif coccion == "2":
+            print("Ha elegido Leña")
+            pizzeria.builder.coccion(CoccionLeña())
+        elif coccion == "3":
+            print("Ha elegido Piedra")
+            pizzeria.builder.coccion(CoccionPiedra())
+        
+        print("5. Presentación")
+        for i in PRESENTACION:
+            print(i)
+        presentacion = input("Introduzca el número de la opción que desea: ")
+        if presentacion == "1":
+            print("Ha elegido Caja")
+            pizzeria.builder.presentacion(PresentacionCaja())
+        elif presentacion == "2":
+            print("Ha elegido Bandeja")
+            pizzeria.builder.presentacion(PresentacionBandeja())
+        elif presentacion == "3":
+            print("Ha elegido Troceada")
+            pizzeria.builder.presentacion(PresentacionTroceada())
+        
+        print("6. Maridajes")
+        for i in MARIDAJES:
+            print(i)
+        maridajes = input("Introduzca el número de la opción que desea: ")
+        if maridajes == "1":
+            print("Ha elegido Vino")
+            pizzeria.builder.maridajes(MaridajeVino())
+        elif maridajes == "2":
+            print("Ha elegido Cerveza")
+            pizzeria.builder.maridajes(MaridajeCerveza())
+        elif maridajes == "3":
+            print("Ha elegido Coctel")
+            pizzeria.builder.maridajes(MaridajeCoctel())
+
+        print("7. Extras")
+        for i in EXTRAS:
+            print(i)
+        extras = input("Introduzca el número de la opción que desea: ")
+        if extras == "1":
+            print("Ha elegido Borde de Queso")
+            pizzeria.builder.extras(ExtraBordeQueso())
+        elif extras == "2":
+            print("Ha elegido Trufa")
+            pizzeria.builder.extras(ExtraTrufa())
+        elif extras == "3":
+            print("Ha elegido Caviar")
+            pizzeria.builder.extras(ExtraCaviar())
 
 
 if __name__ == "__main__":
@@ -435,13 +541,21 @@ if __name__ == "__main__":
     builder = PizzaBuilder()
     pizzeria.builder = builder
 
+    CARTA = ["Jamón y queso, Pepperoni, Hawaiana, Vegana, Especial"]
+    MASAS = ["Masa Fina, Masa Gruesa, Masa Fermentada"]
+    BASES = ["Base de Tomate, Base Vegana, Base Especial"]
+    INGREDIENTES = ["Queso, Jamón, Pepperoni, Champiñones, Piña"]
+    COCCION = ["Horno, Leña, Piedra"]
+    PRESENTACION = ["Caja, Bandeja, Troceada"]
+    MARIDAJES = ["Vino, Cerveza, Coctel"]
+    EXTRAS = ["Borde de Queso, Trufa, Caviar"]
+
     print("Bienvenido a la Pizzeria Pelayo, ¿Quiere ver nuestra carta o prefiere una pizza personalizada?:")
     print("1. Carta")
     print("2. Personalizada")
     opcion = input("Introduzca el número de la opción que desea: ")
 
     if opcion == "1":
-        CARTA = ["Jamón y queso, Pepperoni, Hawaiana, Vegana, Especial"]
         print("Carta:")
         for i in CARTA:
             print(i)
@@ -481,6 +595,13 @@ if __name__ == "__main__":
             print("No tenemos esa pizza en la carta, lo sentimos.")
     
     elif opcion == "2":
+        pizzeria.personalizada()
+        print("Preparando su pizza...")
+        time.sleep(2)
+        builder.pizza.list_parts()
+        
+        
+
         
 
         
