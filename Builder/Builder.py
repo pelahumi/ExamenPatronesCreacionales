@@ -307,7 +307,6 @@ class Builder(ABC):
 
 
 
-
 class PizzaBuilder(Builder):
     def __init__(self) -> None:
         """
@@ -423,7 +422,7 @@ class Pizzeria():
         self.builder.ingredientes(IngredienteJamon())
         self.builder.ingredientes(IngredientePepperoni())
         self.builder.coccion(CoccionLeña())
-        self.builer.maridajes(MaridajeCoctel())
+        self.builder.maridajes(MaridajeCoctel())
         self.builder.presentacion(PresentacionBandeja())
         self.builder.extras(ExtraBordeQueso())
         self.builder.extras(ExtraTrufa())
@@ -602,6 +601,7 @@ if __name__ == "__main__":
         print("Preparando su pizza...")
         time.sleep(2)
         builder.pizza.list_parts()
+        guardar_pizza_en_csv("Personalizada", builder.pizza.parts)
         
         
 
