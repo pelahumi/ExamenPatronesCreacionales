@@ -1,6 +1,7 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any
+import time
 
 #Creamos las interfaces de cada tipo de producto que serán implementadas por las clases concretas de cada producto.
 
@@ -362,7 +363,7 @@ class Pizza():
         self.parts.append(part)
 
     def list_parts(self) -> None:
-        print(f"Pizza: {', '.join(self.parts)}", end="")
+        print(f"Ingredientes: {', '.join(self.parts)}", end="")
 
 
 
@@ -390,6 +391,43 @@ class Pizzeria():
         self.builder.ingredientes(IngredienteQueso())
         self.builder.coccion(CoccionHorno())
         self.builder.presentacion(PresentacionCaja())
+    
+    def pizza_jamon_queso(self) -> None:
+        self.builder.masa(MasaFina())
+        self.builder.base(BaseTomate())
+        self.builder.ingredientes(IngredienteJamon())
+        self.builder.ingredientes(IngredienteQueso())
+        self.builder.coccion(CoccionHorno())
+        self.builder.presentacion(PresentacionCaja())
+    
+    def pizza_hawaiana(self) -> None:
+        self.builder.masa(MasaFina())
+        self.builder.base(BaseTomate())
+        self.builder.ingredientes(IngredienteJamon())
+        self.builder.ingredientes(IngredientePina())
+        self.builder.coccion(CoccionPiedra())
+        self.builder.presentacion(PresentacionBandeja())
+    
+    def pizza_vegana(self) -> None:
+        self.builder.masa(MasaFermentada())
+        self.builder.base(BaseVegana())
+        self.builder.ingredientes(IngredienteChampiñones())
+        self.builder.ingredientes(IngredientePina())
+        self.builder.coccion(CoccionLeña())
+        self.builer.maridajes(MaridajeCerveza())
+        self.builder.presentacion(PresentacionTroceada())
+        
+    def pizza_especial(self) -> None:
+        self.builder.masa(MasaFina())
+        self.builder.base(BaseEspecial())
+        self.builder.ingredientes(IngredienteJamon())
+        self.builder.ingredientes(IngredientePepperoni())
+        self.builder.coccion(CoccionLeña())
+        self.builer.maridajes(MaridajeCoctel())
+        self.builder.presentacion(PresentacionBandeja())
+        self.builder.extras(ExtraBordeQueso())
+        self.builder.extras(ExtraTrufa())
+        self.builder.extras(ExtraCaviar())
 
 
 if __name__ == "__main__":
@@ -397,6 +435,61 @@ if __name__ == "__main__":
     builder = PizzaBuilder()
     pizzeria.builder = builder
 
-    print("Pizza Pepperoni:")
-    pizzeria.pizza_pepperoni()
-    builder.pizza.list_parts()
+    print("Bienvenido a la Pizzeria Pelayo, ¿Quiere ver nuestra carta o prefiere una pizza personalizada?:")
+    print("1. Carta")
+    print("2. Personalizada")
+    opcion = input("Introduzca el número de la opción que desea: ")
+
+    if opcion == "1":
+        CARTA = ["Jamón y queso, Pepperoni, Hawaiana, Vegana, Especial"]
+        print("Carta:")
+        for i in CARTA:
+            print(i)
+        eleccion = str(input("¿Qué pizza desea pedir?: "))
+
+        if eleccion== "Jamón y queso":
+            print("Preparando una pizza de Jamón y queso...")
+            pizzeria.pizza_jamon_queso()
+            time.sleep(2)
+            builder.pizza.list_parts()
+        
+        elif eleccion == "Pepperoni":
+            print("Preparando una pizza Pepperoni...")
+            pizzeria.pizza_pepperoni()
+            time.sleep(2)
+            builder.pizza.list_parts()
+        
+        elif eleccion == "Hawaiana":
+            print("Preparando una pizza Hawaiana...")
+            pizzeria.pizza_hawaiana()
+            time.sleep(2)
+            builder.pizza.list_parts()
+
+        elif eleccion == "Vegana":
+            print("Preparando una pizza Vegana...")
+            pizzeria.pizza_vegana()
+            time.sleep(2)
+            builder.pizza.list_parts()
+        
+        elif eleccion == "Especial":
+            print("Preparando una pizza Especial...")
+            pizzeria.pizza_especial()
+            time.sleep(2)
+            builder.pizza.list_parts()
+        
+        else:
+            print("No tenemos esa pizza en la carta, lo sentimos.")
+    
+    elif opcion == "2":
+        
+
+        
+
+        
+
+        
+
+
+
+        
+
