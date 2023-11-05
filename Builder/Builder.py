@@ -2,6 +2,72 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any
 
+#Creamos las interfaces de cada tipo de producto que serán implementadas por las clases concretas de cada producto.
+
+class Masa(ABC):
+    """
+    La interfaz Masa declara operaciones para todos los tipos de objetos Masa.
+    """
+
+    @abstractmethod
+    def tipo_masa(self) -> str:
+        pass
+
+class Base(ABC):
+    """
+    La interfaz Base declara operaciones para todos los tipos de objetos Base.
+    """
+
+    @abstractmethod
+    def tipo_base(self) -> str:
+        pass
+
+class Ingredientes(ABC):
+    """
+    La interfaz Ingredientes declara operaciones para todos los tipos de objetos Ingredientes.
+    """
+
+    @abstractmethod
+    def tipo_ingredientes(self) -> str:
+        pass
+
+class Coccion(ABC):
+    """
+    La interfaz Coccion declara operaciones para todos los tipos de objetos Coccion.
+    """
+
+    @abstractmethod
+    def tipo_coccion(self) -> str:
+        pass
+
+class Presentacion(ABC):
+    """
+    La interfaz Presentacion declara operaciones para todos los tipos de objetos Presentacion.
+    """
+
+    @abstractmethod
+    def tipo_presentacion(self) -> str:
+        pass
+
+class Maridajes(ABC):
+    """
+    La interfaz Maridajes declara operaciones para todos los tipos de objetos Maridajes.
+    """
+
+    @abstractmethod
+    def tipo_maridajes(self) -> str:
+        pass
+
+class Extras(ABC):
+    """
+    La interfaz Extras declara operaciones para todos los tipos de objetos Extras.
+    """
+
+    @abstractmethod
+    def tipo_extras(self) -> str:
+        pass
+
+
 class Builder(ABC):
 
     """
@@ -96,3 +162,29 @@ class Pizza():
 
     def list_parts(self) -> None:
         print(f"Pizza: {', '.join(self.parts)}", end="")
+
+class Pizzeria():
+
+    """
+    El director. Construye un objeto usando la interfaz Builder.
+    """
+
+    def __init__(self) -> None:
+        self._builder = None
+    
+    @property
+    def builder(self) -> Builder:
+        return self._builder
+    
+    @builder.setter
+    def builder(self, builder: Builder) -> None:
+        self._builder = builder
+
+    def build_pizza(self) -> None:
+        self.builder.masa()
+        self.builder.base()
+        self.builder.ingredientes()
+        self.builder.coccion()
+        self.builder.presentacion()
+        self.builder.maridajes()
+        self.builder.extras()
