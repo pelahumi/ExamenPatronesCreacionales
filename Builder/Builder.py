@@ -367,7 +367,7 @@ class Pizza():
     
     def guardar_ingredientes(self) -> None:
         for part in self.parts:
-            ingredientes = "".join(part)
+            ingredientes = f"{', '.join(self.parts)}"
         return ingredientes
 
 
