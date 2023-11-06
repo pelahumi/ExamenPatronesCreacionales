@@ -364,6 +364,9 @@ class Pizza():
 
     def list_parts(self) -> None:
         print(f"Ingredientes: {', '.join(self.parts)}", end="")
+    
+    def guardar_ingredientes(self) -> None:
+        return self.parts
 
 
 
@@ -566,46 +569,58 @@ if __name__ == "__main__":
             print(i)
         eleccion = str(input("¿Qué pizza desea pedir?: "))
 
+
         if eleccion == "Jamón y queso":
             print("Preparando una pizza de Jamón y queso...")
             pizzeria.pizza_jamon_queso()
             time.sleep(2)
-            builder.pizza.list_parts()
+            ingredientes = builder.pizza.guardar_ingredientes()
+            guardar_pizza_en_csv("Jamón y queso", ingredientes)
+            print("Lista su pizza de Jamón y queso.")
+            
         
         elif eleccion == "Pepperoni":
             print("Preparando una pizza Pepperoni...")
             pizzeria.pizza_pepperoni()
             time.sleep(2)
-            builder.pizza.list_parts()
+            ingredientes = builder.pizza.guardar_ingredientes()
+            guardar_pizza_en_csv("Pepperoni", ingredientes)
+            print("Lista su pizza de Pepperoni.")
             
         
         elif eleccion == "Hawaiana":
             print("Preparando una pizza Hawaiana...")
             pizzeria.pizza_hawaiana()
             time.sleep(2)
-            builder.pizza.list_parts()
+            ingredientes = builder.pizza.guardar_ingredientes()
+            guardar_pizza_en_csv("Hawaiana", ingredientes)
+            print("Lista su pizza de Hawaiana.")
 
         elif eleccion == "Vegana":
             print("Preparando una pizza Vegana...")
             pizzeria.pizza_vegana()
             time.sleep(2)
-            builder.pizza.list_parts()
+            ingredientes = builder.pizza.guardar_ingredientes()
+            guardar_pizza_en_csv("Hawaiana", ingredientes)
+            print("Lista su pizza de Hawaiana.")
         
         elif eleccion == "Especial":
             print("Preparando una pizza Especial...")
             pizzeria.pizza_especial()
             time.sleep(2)
-            builder.pizza.list_parts()
+            ingredientes = builder.pizza.guardar_ingredientes()
+            guardar_pizza_en_csv("Especial", ingredientes)
+            print("Lista su pizza Especial.")
         
         else:
             print("No tenemos esa pizza en la carta, lo sentimos.")
         
-        guardar_pizza_en_csv(eleccion, builder.pizza.parts)
+        
     
     elif opcion == "2":
         pizzeria.personalizada()
         print("Preparando su pizza...")
         time.sleep(2)
-        builder.pizza.list_parts()
-
-        guardar_pizza_en_csv("Personalizada", builder.pizza.parts)
+        ingredientes = builder.pizza.guardar_ingredientes()
+        guardar_pizza_en_csv("Personalizada", ingredientes)
+        print("Lista su pizza personalizada.")
