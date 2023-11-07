@@ -15,6 +15,7 @@ from interface.maridajes import *
 from interface.extras import *
 
 
+
 class Builder(ABC):
 
     """
@@ -209,13 +210,13 @@ class Pizzeria():
         base = input("Introduzca el número de la opción que desea: ")
         if base == "1":
             print("Ha elegido Base de Tomate")
-            pizzeria.builder.base(BaseTomate())
+            self.builder.base(BaseTomate())
         elif base == "2":
             print("Ha elegido Base Vegana")
-            pizzeria.builder.base(BaseVegana())
+            self.builder.base(BaseVegana())
         elif base == "3":
             print("Ha elegido Base Especial")
-            pizzeria.builder.base(BaseEspecial())
+            self.builder.base(BaseEspecial())
         
         print("3. Ingredientes")
         for i in INGREDIENTES:
@@ -223,19 +224,19 @@ class Pizzeria():
         ingredientes = input("Introduzca el número de la opción que desea: ")
         if ingredientes == "1":
             print("Ha elegido Queso")
-            pizzeria.builder.ingredientes(IngredienteQueso())
+            self.builder.ingredientes(IngredienteQueso())
         elif ingredientes == "2":
             print("Ha elegido Jamón")
-            pizzeria.builder.ingredientes(IngredienteJamon())
+            self.builder.ingredientes(IngredienteJamon())
         elif ingredientes == "3":
             print("Ha elegido Pepperoni")
-            pizzeria.builder.ingredientes(IngredientePepperoni())
+            self.builder.ingredientes(IngredientePepperoni())
         elif ingredientes == "4":
             print("Ha elegido Champiñones")
-            pizzeria.builder.ingredientes(IngredienteChampiñones())
+            self.builder.ingredientes(IngredienteChampiñones())
         elif ingredientes == "5":
             print("Ha elegido Piña")
-            pizzeria.builder.ingredientes(IngredientePina())
+            self.builder.ingredientes(IngredientePina())
         
         print("4. Cocción")
         for i in COCCION:
@@ -243,13 +244,13 @@ class Pizzeria():
         coccion = input("Introduzca el número de la opción que desea: ")
         if coccion == "1":
             print("Ha elegido Horno")
-            pizzeria.builder.coccion(CoccionHorno())
+            self.builder.coccion(CoccionHorno())
         elif coccion == "2":
             print("Ha elegido Leña")
-            pizzeria.builder.coccion(CoccionLeña())
+            self.builder.coccion(CoccionLeña())
         elif coccion == "3":
             print("Ha elegido Piedra")
-            pizzeria.builder.coccion(CoccionPiedra())
+            self.builder.coccion(CoccionPiedra())
         
         print("5. Presentación")
         for i in PRESENTACION:
@@ -257,13 +258,13 @@ class Pizzeria():
         presentacion = input("Introduzca el número de la opción que desea: ")
         if presentacion == "1":
             print("Ha elegido Caja")
-            pizzeria.builder.presentacion(PresentacionCaja())
+            self.builder.presentacion(PresentacionCaja())
         elif presentacion == "2":
             print("Ha elegido Bandeja")
-            pizzeria.builder.presentacion(PresentacionBandeja())
+            self.builder.presentacion(PresentacionBandeja())
         elif presentacion == "3":
             print("Ha elegido Troceada")
-            pizzeria.builder.presentacion(PresentacionTroceada())
+            self.builder.presentacion(PresentacionTroceada())
         
         print("6. Maridajes")
         for i in MARIDAJES:
@@ -271,13 +272,13 @@ class Pizzeria():
         maridajes = input("Introduzca el número de la opción que desea: ")
         if maridajes == "1":
             print("Ha elegido Vino")
-            pizzeria.builder.maridajes(MaridajeVino())
+            self.builder.maridajes(MaridajeVino())
         elif maridajes == "2":
             print("Ha elegido Cerveza")
-            pizzeria.builder.maridajes(MaridajeCerveza())
+            self.builder.maridajes(MaridajeCerveza())
         elif maridajes == "3":
             print("Ha elegido Coctel")
-            pizzeria.builder.maridajes(MaridajeCoctel())
+            self.builder.maridajes(MaridajeCoctel())
 
         print("7. Extras")
         for i in EXTRAS:
@@ -285,13 +286,13 @@ class Pizzeria():
         extras = input("Introduzca el número de la opción que desea: ")
         if extras == "1":
             print("Ha elegido Borde de Queso")
-            pizzeria.builder.extras(ExtraBordeQueso())
+            self.builder.extras(ExtraBordeQueso())
         elif extras == "2":
             print("Ha elegido Trufa")
-            pizzeria.builder.extras(ExtraTrufa())
+            self.builder.extras(ExtraTrufa())
         elif extras == "3":
             print("Ha elegido Caviar")
-            pizzeria.builder.extras(ExtraCaviar())
+            self.builder.extras(ExtraCaviar())
 
 
 
@@ -400,5 +401,4 @@ class Pizzeria():
 """
 
 
-if __name__ == "__main__":
     
