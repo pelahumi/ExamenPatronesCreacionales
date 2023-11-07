@@ -548,7 +548,7 @@ class Pizzeria():
 
 
 
-class PizzaApp:
+"""class PizzaApp:
     def __init__(self, root):
         self.pizzeria = Pizzeria()
         self.builder = PizzaBuilder()
@@ -650,7 +650,7 @@ class PizzaApp:
     def confirmar_personalizada(self):
         # Aquí implementarías la lógica para construir la pizza personalizada según las selecciones del usuario.
         pass
-
+"""
 
 
 if __name__ == "__main__":
