@@ -1,4 +1,4 @@
-from Builder import PizzaBuilder, Pizzeria
+from builder import PizzaBuilder, Pizzeria
 import time
 from auxiliar import guardar_pizza_en_csv
 
