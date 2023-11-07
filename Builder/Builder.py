@@ -5,6 +5,10 @@ import time
 from auxiliar import guardar_pizza_en_csv
 import tkinter as tk
 from tkinter import ttk
+from interface.masa import *
+from interface.base import *
+
+
 #Creamos las interfaces de cada tipo de producto que serán implementadas por las clases concretas de cada producto.
 
 
