@@ -189,6 +189,15 @@ class Pizzeria():
     #Pizza personalizada
 
     def personalizada(self) -> None:
+
+        MASAS = ["Masa Fina, Masa Gruesa, Masa Fermentada"]
+        BASES = ["Base de Tomate, Base Vegana, Base Especial"]
+        INGREDIENTES = ["Queso, Jamón, Pepperoni, Champiñones, Piña"]
+        COCCION = ["Horno, Leña, Piedra"]
+        PRESENTACION = ["Caja, Bandeja, Troceada"]
+        MARIDAJES = ["Vino, Cerveza, Coctel"]
+        EXTRAS = ["Borde de Queso, Trufa, Caviar"]
+
         print("Elige los ingredientes de tu pizza:")
         print("1. Masa")
         for i in MASAS:
