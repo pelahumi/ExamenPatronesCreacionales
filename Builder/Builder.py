@@ -9,7 +9,11 @@ from interface.masa import *
 from interface.base import *
 
 
-#Creamos las interfaces de cada tipo de producto que serán implementadas por las clases concretas de cada producto.
+
+
+
+
+    
 
 
 
@@ -17,146 +21,17 @@ from interface.base import *
 
 
 
-    
-
-
-class Coccion(ABC):
-    """
-    La interfaz Coccion declara operaciones para todos los tipos de objetos Coccion.
-    """
-
-    @abstractmethod
-    def tipo_coccion(self) -> str:
-        pass
-
-class CoccionHorno(Coccion):
-    """
-    Las clases concretas de Coccion implementan la interfaz Coccion.
-    """
-
-    def tipo_coccion(self) -> str:
-        return "Horno"
-
-class CoccionLeña(Coccion):
-    """
-    Las clases concretas de Coccion implementan la interfaz Coccion.
-    """
-
-    def tipo_coccion(self) -> str:
-        return "Leña"
-
-class CoccionPiedra(Coccion):
-    """
-    Las clases concretas de Coccion implementan la interfaz Coccion.
-    """
-
-    def tipo_coccion(self) -> str:
-        return "Piedra"
 
 
 
-class Presentacion(ABC):
-    """
-    La interfaz Presentacion declara operaciones para todos los tipos de objetos Presentacion.
-    """
-
-    @abstractmethod
-    def tipo_presentacion(self) -> str:
-        pass
-
-class PresentacionCaja(Presentacion):
-    """
-    Las clases concretas de Presentacion implementan la interfaz Presentacion.
-    """
-
-    def tipo_presentacion(self) -> str:
-        return "Caja"
-
-class PresentacionBandeja(Presentacion):
-    """
-    Las clases concretas de Presentacion implementan la interfaz Presentacion.
-    """
-
-    def tipo_presentacion(self) -> str:
-        return "Bandeja"
-
-class PresentacionTroceada(Presentacion):
-    """
-    Las clases concretas de Presentacion implementan la interfaz Presentacion.
-    """
-
-    def tipo_presentacion(self) -> str:
-        return "Troceada"
 
 
 
-class Maridajes(ABC):
-    """
-    La interfaz Maridajes declara operaciones para todos los tipos de objetos Maridajes.
-    """
-
-    @abstractmethod
-    def tipo_maridajes(self) -> str:
-        pass
-
-class MaridajeVino(Maridajes):
-    """
-    Las clases concretas de Maridajes implementan la interfaz Maridajes.
-    """
-
-    def tipo_maridajes(self) -> str:
-        return "Vino"
-
-class MaridajeCerveza(Maridajes):
-    """
-    Las clases concretas de Maridajes implementan la interfaz Maridajes.
-    """
-
-    def tipo_maridajes(self) -> str:
-        return "Cerveza"
-
-class MaridajeCoctel(Maridajes):
-    """
-    Las clases concretas de Maridajes implementan la interfaz Maridajes.
-    """
-
-    def tipo_maridajes(self) -> str:
-        return "Coctel"
 
 
 
-class Extras(ABC):
-    """
-    La interfaz Extras declara operaciones para todos los tipos de objetos Extras.
-    """
 
-    @abstractmethod
-    def tipo_extras(self) -> str:
-        pass
 
-class ExtraBordeQueso(Extras):
-    """
-    Las clases concretas de Extras implementan la interfaz Extras.
-    """
-
-    def tipo_extras(self) -> str:
-        return "Borde de Queso"
-
-class ExtraTrufa(Extras):
-    """
-    Las clases concretas de Extras implementan la interfaz Extras.
-    """
-
-    def tipo_extras(self) -> str:
-        return "Trufa"
-
-class ExtraCaviar(Extras):
-    """
-    Las clases concretas de Extras implementan la interfaz Extras.
-    """
-
-    def tipo_extras(self) -> str:
-        return "Caviar"
 
 
 
