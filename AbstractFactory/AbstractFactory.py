@@ -84,7 +84,7 @@ class AbstractAnalisis(ABC):
 class Moda(AbstractAnalisis):
 
     def calcular(self, data, col):
-        return data[col].mode()
+        return data[col].mode()[0]
 
 class Media(AbstractAnalisis):
     
