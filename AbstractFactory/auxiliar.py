@@ -10,3 +10,7 @@ def convertir_a_segundos(hora_minuto):
     elif len(partes) == 3:  # formato HH:MM:SS
         horas, minutos, segundos = partes
         return int(horas) * 3600 + int(minutos) * 60 + int(segundos)
+    
+def agrupar_y_contar(data, col):
+    grouped = data.groupby(col).size()
+    return grouped 
