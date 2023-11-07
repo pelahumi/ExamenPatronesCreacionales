@@ -1,5 +1,4 @@
 import csv
-import pandas as pd
 
 def guardar_pizza_en_csv(nombre_pizza, ingredientes):
     # Nombre del archivo CSV en el que se guardarán las pizzas
