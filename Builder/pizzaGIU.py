@@ -4,7 +4,7 @@ from builder import *
 
 import tkinter as tk
 from tkinter import ttk
-import time
+
 
 # Asumiendo que las clases Pizzeria, PizzaBuilder y la función guardar_pizza_en_csv están definidas anteriormente.
 # Asegúrate de implementar la función guardar_pizza_en_csv.
