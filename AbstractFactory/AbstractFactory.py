@@ -72,14 +72,14 @@ class AnalisisFactory(AbstractFactory):
         return Mediana()
 
 
-#Definimos la clase abstracta para cada operación de estadística
+#Definimos la clase abstracta del producto
 class AbstractAnalisis(ABC):
 
     @abstractmethod
     def calcular(self) -> int:
         pass
 
-#Definimos las clases concretas para cada operación de estadística
+#Definimos las clases concretas para cada producto
 class Moda(AbstractAnalisis):
 
     def calcular(self, data, col):
@@ -94,6 +94,29 @@ class Mediana(AbstractAnalisis):
         
     def calcular(self, data, col):
         return data[col].median()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def launcher(factory: AbstractFactory):
     moda = factory.crear_moda()
