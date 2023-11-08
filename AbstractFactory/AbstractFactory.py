@@ -5,6 +5,10 @@ from auxiliar import *
 
 URL = "AbstractFactory/samur.csv"
 
+
+#IMPORTANTE: Limpiar el csv de valores nulos en la columna "Hora Intervencion" y "Hora Solicitud", 
+
+
 # Leer CSV desde la URL
 data = pd.read_csv(URL, sep=';', encoding='ISO-8859-1')
 
