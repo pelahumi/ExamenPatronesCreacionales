@@ -103,9 +103,15 @@ def launcher(factory: AbstractFactory):
 
     col = str(input("Introduce la columna sobre la que quieres realizar el análisis: "))
 
+    calculo_moda = moda.calcular(data,col) 
+    
 
+    if comprobador(data,col) == True:
+        calculo_moda = invertir(calculo_moda)
+    else:
+        pass
 
-    print("La moda de la columna", col, "es:", moda.calcular(data,col))
+    print("La moda de la columna", col, "es:", calculo_moda)
     print("\n")
     print("La media de la columna", col, "es:", media.calcular(data, col))
     print("\n")

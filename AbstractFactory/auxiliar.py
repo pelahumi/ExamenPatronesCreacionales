@@ -22,11 +22,11 @@ def invertir(segundos):
     segundos_restantes = segundos % 3600
     minutos = segundos_restantes // 60  # Obtenemos la cantidad de minutos
     segundos_restantes = segundos_restantes % 60  # Los segundos que restan
-    return f"{horas:02}:{minutos:02}:{segundos_restantes:02}"
+    return f"{int(horas):02}:{int(minutos):02}:{int(segundos_restantes):02}"
 
 
 def comprobador(data, col):
     if col == "Tiempo Llegada" or col == "Hora Solicitud" or col == "Hora Intervencion":
-        data[col] = data[col].apply(invertir)
+        return True
     else: 
         pass
