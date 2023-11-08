@@ -104,18 +104,21 @@ def launcher(factory: AbstractFactory):
     col = str(input("Introduce la columna sobre la que quieres realizar el análisis: "))
 
     calculo_moda = moda.calcular(data,col) 
+    calculo_mediana = mediana.calcular(data,col)
+    calculo_media = media.calcular(data,col)
     
 
     if comprobador(data,col) == True:
         calculo_moda = invertir(calculo_moda)
+
     else:
         pass
 
     print("La moda de la columna", col, "es:", calculo_moda)
     print("\n")
-    print("La media de la columna", col, "es:", media.calcular(data, col))
+    print("La media de la columna", col, "es:", calculo_media)
     print("\n")
-    print("La mediana de la columna", col, "es:", mediana.calcular(data, col))
+    print("La mediana de la columna", col, "es:", calculo_mediana)
 
 
 if __name__ == "__main__":
