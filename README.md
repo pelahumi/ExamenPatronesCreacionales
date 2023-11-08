@@ -32,7 +32,9 @@ Por último, tenemos al director de orquesta, la clase ```Pizzeria```. que es la
 
 Para ver todo esto más claramente, construimos un diagrama UML donde se puede apreciar mejor las relaciones entre las distintas clases:
 
-![BuilderUML](https://github.com/pelahumi/ExamenPatronesCreacionales/assets/91721764/f965a62e-c7a2-43dd-9e12-d63fdc29d929)
+<p align="center">
+  <img src="[tu_imagen.png](https://github.com/pelahumi/ExamenPatronesCreacionales/assets/91721764/f965a62e-c7a2-43dd-9e12-d63fdc29d929)" alt="BuilderUML">
+</p>
 
 ### Elementos de la pizza
 
