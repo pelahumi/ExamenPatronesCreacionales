@@ -1,4 +1,4 @@
-from builder import PizzaBuilder, Pizzeria, Builder
+from builder import PizzaBuilder, Pizzeria
 import time
 from auxiliar import guardar_pizza_en_csv
 import tkinter as tk
@@ -83,6 +83,10 @@ def launcher():
     # Interfaz gráfica principal
     root = tk.Tk()
     root.title("Pizzeria Pelayo")
+    
+    pizzeria = Pizzeria()
+    builder = PizzaBuilder()
+    pizzeria.builder = builder
 
     # Función para manejar la selección de la carta
     def seleccionar_pizza():
