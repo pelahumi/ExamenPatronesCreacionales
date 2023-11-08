@@ -10,7 +10,6 @@ data = pd.read_csv(URL, sep=';', encoding='ISO-8859-1')
 
 #Manipulación de datos
 #Eliminamos las columnas que no nos interesan
-data.drop("Codigo", axis=1, inplace=True)
 data.drop("Hospital", axis=1, inplace=True)
 
 #Cambiamos los tipos de datos a otros más adecuados
@@ -110,6 +109,8 @@ def launcher(factory: AbstractFactory):
 
     if comprobador(data,col) == True:
         calculo_moda = invertir(calculo_moda)
+        calculo_mediana = invertir(calculo_mediana)
+        calculo_media = invertir(calculo_media)
 
     else:
         pass
