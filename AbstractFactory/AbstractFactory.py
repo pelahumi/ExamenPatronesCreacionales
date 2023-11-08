@@ -104,7 +104,9 @@ def launcher(factory: AbstractFactory):
 
     col = str(input("Introduce la columna sobre la que quieres realizar el análisis: "))
     print("La moda de la columna", col, "es:", moda.calcular(data,col))
+    print("\n")
     print("La media de la columna", col, "es:", media.calcular(data, col))
+    print("\n")
     print("La mediana de la columna", col, "es:", mediana.calcular(data, col))
 
 
