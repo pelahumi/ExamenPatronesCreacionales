@@ -1,4 +1,4 @@
-from builder import PizzaBuilder, Pizzeria
+from builder import PizzaBuilder, Pizzeria, Builder
 import time
 from auxiliar import guardar_pizza_en_csv
 import tkinter as tk
@@ -94,8 +94,8 @@ def launcher():
             # Aquí iría la lógica para preparar la pizza
             # Por ejemplo: pizzeria.pizza_jamon_queso()
             label_estado.config(text=f"Lista su pizza de {eleccion}.")
-            # Aquí iría la lógica para guardar la pizza en el CSV
-            # Por ejemplo: guardar_pizza_en_csv(eleccion, ingredientes)
+            ingredientes = builder.pizza.guardar_ingredientes()
+            guardar_pizza_en_csv(eleccion, ingredientes)
 
     # Configuración de la lista de pizzas
     lista_pizzas = tk.Listbox(root)
