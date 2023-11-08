@@ -1,5 +1,7 @@
 # ExamenPatronesCreacionales
 
+Link de mi repositorio de [GitHub](https://github.com/pelahumi/ExamenPatronesCreacionales)
+
 ## ÍNDICE
 ---
 1) Abstract Factory
