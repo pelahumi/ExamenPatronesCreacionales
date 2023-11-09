@@ -4,11 +4,11 @@ Link de mi repositorio de [GitHub](https://github.com/pelahumi/ExamenPatronesCre
 
 ## ÍNDICE
 ---
-1) Abstract Factory
-2) Builder
+1) [Abstract Factory](#1)
+2) [Builder](#2)
 ---
 
-## Abstract Factory
+## Abstract Factory<a name="1"></a>
 
 ### Idea general
 
@@ -58,7 +58,7 @@ En el fichero auxiliares.py tenemos la función ```convertir_a_segundos()```, cu
 Por último hay una función llamada ```comprobador()``` que lo que hace es comprobar si la columna sobre la que el usuario quiere hacer el análisis estadístico, es una columna que contiene datos en HH:MM:SS, para así aplicar las funciones anteriores. De lo contrario, no hace nada.
 
 
-## Builder
+## Builder<a name="2"></a>
 
 ### Idea general
 
