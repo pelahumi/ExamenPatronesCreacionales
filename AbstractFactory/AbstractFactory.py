@@ -3,6 +3,8 @@ from abc import ABC, abstractmethod
 from auxiliar import *
 import matplotlib.pyplot as plt
 
+#En este fichero se implementa el patrón Abstract Factory para las operaciones de estadística y los gráficos
+
 #Abstract Factory para las operaciones de estadística
 class AbstractFactory(ABC):
     """
