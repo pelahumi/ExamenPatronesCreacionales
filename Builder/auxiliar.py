@@ -13,7 +13,7 @@ def guardar_pizza_en_csv(nombre_pizza, ingredientes):
         writer.writerow([nombre_pizza, ingredientes])
 
 def validator(seleccion, csv):
-    data = pd.read_csv(csv, sep=';')
+    data = pd.read_csv(csv, sep=';', header=None)
     if str(seleccion) in data.values:
         return True
     else:

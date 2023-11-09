@@ -201,7 +201,7 @@ class Pizzeria():
             print(i)
         seleccion_masa = input("Introduzca la opción que desea: ")
 
-        while not validator(seleccion_masa, "Builder/masasDB.csv"):
+        while not validator(seleccion_masa, "Builder/DataBase/masasDB.csv"):
             print("La masa que ha elegido no está disponible, por favor, elija otra.")
             seleccion_masa = input("Introduzca la opción que desea: ")
 
