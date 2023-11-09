@@ -219,7 +219,7 @@ class Pizzeria():
             print(i)
         base = input("Introduzca la opción que desea: ")
 
-        while not validator(base, BASES):
+        while not validator(base):
             print("La base que ha elegido no está disponible, por favor, elija otra.")
             base = input("Introduzca la opción que desea: ") 
 
@@ -237,7 +237,7 @@ class Pizzeria():
             print(i)
         ingrediente = input("Introduzca la opción que desea: ")
 
-        while not validator(ingredientes):
+        while not validator(ingrediente):
             print("El ingrediente que ha elegido no está disponible, por favor, elija otro.")
             ingredientes = input("Introduzca la opción que desea: ")
 
@@ -259,7 +259,7 @@ class Pizzeria():
             print(i)
         coccion = input("Introduzca la opción que desea: ")
 
-        while not validator(coccion, COCCION):
+        while not validator(coccion):
             print("La cocción que ha elegido no está disponible, por favor, elija otra.")
             coccion = input("Introduzca la opción que desea: ")
 
@@ -277,7 +277,7 @@ class Pizzeria():
             print(i)
         presentacion = input("Introduzca la opción que desea: ")
 
-        while not validator(presentacion, PRESENTACION):
+        while not validator(presentacion):
             print("La presentación que ha elegido no está disponible, por favor, elija otra.")
             presentacion = input("Introduzca la opción que desea: ")
 
@@ -295,7 +295,7 @@ class Pizzeria():
             print(i)
         maridajes = input("Introduzca la opción que desea: ")
 
-        while not validator(maridajes, MARIDAJES):
+        while not validator(maridajes):
             print("El maridaje que ha elegido no está disponible, por favor, elija otro.")
             maridajes = input("Introduzca la opción que desea: ")
 
@@ -313,7 +313,7 @@ class Pizzeria():
             print(i)
         extras = input("Introduzca la opción que desea: ")
 
-        while not validator(extras, EXTRAS):
+        while not validator(extras):
             print("El extra que ha elegido no está disponible, por favor, elija otro.")
             extras = input("Introduzca la opción que desea: ")
 
