@@ -1,7 +1,7 @@
 import pandas as pd
 
 #Leemos el csv
-data = pd.read_csv("AbstractFactory/samur.csv", sep=';', encoding='UTF-8')
+data = pd.read_csv("AbstractFactory/DataBase/samur.csv", sep=';', encoding='UTF-8')
 
 #Visualizamos los datos del csv
 #print(data.head())
@@ -44,7 +44,7 @@ mes_a_numero = {
 data["Mes"] = data["Mes"].replace(mes_a_numero)
 
 #Creamos un nuevo csv con los datos ya filtrados y limpios
-data.to_csv("AbstractFactory/samur_limpio.csv", sep=';', encoding='UTF-8', index=False)
+data.to_csv("AbstractFactory/DataBase/samur_limpio.csv", sep=';', encoding='UTF-8', index=False)
 
 
 

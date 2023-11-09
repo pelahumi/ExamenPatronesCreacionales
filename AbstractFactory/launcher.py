@@ -4,7 +4,7 @@ from auxiliar import convertir_a_segundos, comprobador, invertir
 
 def launcher(factory: AbstractFactory):
 
-    data = pd.read_csv("AbstractFactory/samur_limpio.csv", sep = ";",  encoding = "UTF-8")
+    data = pd.read_csv("AbstractFactory/DataBase/samur_limpio.csv", sep = ";",  encoding = "UTF-8")
 
     data["Hora Solicitud"] = data["Hora Solicitud"].apply(convertir_a_segundos)
     data["Hora Intervencion"] = data["Hora Intervencion"].apply(convertir_a_segundos)
