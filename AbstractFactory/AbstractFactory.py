@@ -1,48 +1,6 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
-import pandas as pd
 from auxiliar import *
-
-URL = "AbstractFactory/samur.csv"
-
-
-#IMPORTANTE: Limpiar el csv de valores nulos en la columna "Hora Intervencion" y "Hora Solicitud", 
-
-
-# Leer CSV desde la URL
-data = pd.read_csv(URL, sep=';', encoding='ISO-8859-1')
-
-#Manipulación de datos
-#Eliminamos las columnas que no nos interesan
-data.drop("Hospital", axis=1, inplace=True)
-
-#Cambiamos los tipos de datos a otros más adecuados
-mes_a_numero = {
-    "ENERO": 1,
-    "FEBRERO": 2,
-    "MARZO": 3,
-    "ABRIL": 4,
-    "MAYO": 5,
-    "JUNIO": 6,
-    "JULIO": 7,
-    "AGOSTO": 8,
-    "SEPTIEMBRE": 9,
-    "OCTUBRE": 10,
-    "NOVIEMBRE": 11,
-    "DICIEMBRE": 12
-}
-
-data["Mes"] = data["Mes"].replace(mes_a_numero)
-
-data["Hora Solicitud"] = data["Hora Solicitud"].apply(convertir_a_segundos)
-data["Hora Intervencion"] = data["Hora Intervencion"].apply(convertir_a_segundos)
-
-#Añadimos una columna con el tiempo de llegada
-data["Tiempo Llegada"] = data["Hora Intervencion"] - data["Hora Solicitud"]
-
-
-
-
 
 #Abstract Factory para las operaciones de estadística
 class AbstractFactory(ABC):
