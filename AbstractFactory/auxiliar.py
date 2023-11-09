@@ -10,10 +10,6 @@ def convertir_a_segundos(hora_minuto):
     elif len(partes) == 3:  # formato HH:MM:SS
         horas, minutos, segundos = partes
         return int(horas) * 3600 + int(minutos) * 60 + int(segundos)
-    
-def agrupar_y_contar(data, col):
-    grouped = data.groupby(col).size()
-    return grouped 
 
 def invertir(segundos):
     if segundos is None:
@@ -26,7 +22,7 @@ def invertir(segundos):
 
 
 def comprobador(col):
-    if col == "Tiempo Llegada" or col == "Hora Solicitud" or col == "Hora Intervencion":
+    if col == "Hora Solicitud" or col == "Hora Intervencion":
         return True
     else: 
         pass
