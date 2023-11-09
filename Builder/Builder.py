@@ -187,6 +187,7 @@ class Pizzeria():
 
     def personalizada(self) -> None:
 
+        #Definimos los elementos en listas inmutables para mostrarlos por pantalla
         MASAS = ["Masa Fina", "Masa Gruesa", "Masa Fermentada"]
         BASES = ["Base de Tomate", "Base Vegana", "Base Especial"]
         INGREDIENTES = ["Queso", "Jamón", "Pepperoni", "Champiñones", "Piña"]

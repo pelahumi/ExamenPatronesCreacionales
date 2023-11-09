@@ -3,10 +3,16 @@ import time
 from auxiliar import guardar_pizza_en_csv, validator
 
 def launcher():
+
+    """
+    Función que ejecuta el programa por la terminal
+    """
+
     pizzeria = Pizzeria()
     builder = PizzaBuilder()
     pizzeria.builder = builder
 
+    #Declaramos una lista inmutable para mostrar las pizzas de la carta
     CARTA = ["Jamón y queso", "Pepperoni", "Hawaiana", "Vegana", "Especial"]
 
 
