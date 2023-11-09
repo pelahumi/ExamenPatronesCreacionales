@@ -1,5 +1,8 @@
 import tkinter as tk
 from builder import *
+import time
+from auxiliar import guardar_pizza_en_csv
+
 
 def pizzaApp():
     # Interfaz gráfica principal
@@ -17,11 +20,25 @@ def pizzaApp():
             label_estado.config(text=f"Preparando una pizza de {eleccion}...")
             root.update()
             time.sleep(2)  # Simular el tiempo de preparación
-            # Aquí iría la lógica para preparar la pizza
-            # Por ejemplo: pizzeria.pizza_jamon_queso()
-            label_estado.config(text=f"Lista su pizza de {eleccion}.")
+            if eleccion == "Jamón y queso":
+                pizzeria.pizza_jamon_queso()
+        
+            elif eleccion == "Pepperoni":
+                pizzeria.pizza_pepperoni()
+            
+            elif eleccion == "Hawaiana":
+                pizzeria.pizza_hawaiana()
+            
+            elif eleccion == "Vegana":
+                pizzeria.pizza_vegana()
+            
+            elif eleccion == "Especial":
+                pizzeria.pizza_especial()
+
             ingredientes = builder.pizza.guardar_ingredientes()
             guardar_pizza_en_csv(eleccion, ingredientes)
+            
+            label_estado.config(text=f"Lista su pizza de {eleccion}.")
 
     # Configuración de la lista de pizzas
     lista_pizzas = tk.Listbox(root)
