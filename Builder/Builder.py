@@ -1,10 +1,7 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from typing import Any
-import time
-from auxiliar import guardar_pizza_en_csv
-import tkinter as tk
-from tkinter import ttk
+from auxiliar import validator
 
 from interface.masa import *
 from interface.base import *
@@ -202,106 +199,132 @@ class Pizzeria():
         print("1. Masa")
         for i in MASAS:
             print(i)
-        seleccion_masa = input("Introduzca el número de la opción que desea: ")
-        if seleccion_masa == "1":
-            print("Ha elegido Masa Fina")
+        seleccion_masa = input("Introduzca la opción que desea: ")
+
+        while not validator(seleccion_masa, MASAS):
+            print("La masa que ha elegido no está disponible, por favor, elija otra.")
+            seleccion_masa = input("Introduzca la opción que desea: ")
+
+        if seleccion_masa == "Masa Fina":
             self.builder.masa(MasaFina())
-        elif seleccion_masa == "2":
-            print("Ha elegido Masa Gruesa")
+        elif seleccion_masa == "Masa Gruesa":
             self.builder.masa(MasaGruesa())
-        elif seleccion_masa == "3":
-            print("Ha elegido Masa Fermentada")
+        elif seleccion_masa == "Masa Fermentada":
             self.builder.masa(MasaFermentada())
+        
+        print("Ha elegido {}.".format(seleccion_masa))
         
         print("2. Base")
         for i in BASES:
             print(i)
         base = input("Introduzca el número de la opción que desea: ")
-        if base == "1":
-            print("Ha elegido Base de Tomate")
+
+        while not validator(base, BASES):
+            print("La base que ha elegido no está disponible, por favor, elija otra.")
+            base = input("Introduzca el número de la opción que desea: ") 
+
+        if base == "Base de Tomate":
             self.builder.base(BaseTomate())
-        elif base == "2":
-            print("Ha elegido Base Vegana")
+        elif base == "Base Vegana":
             self.builder.base(BaseVegana())
-        elif base == "3":
-            print("Ha elegido Base Especial")
+        elif base == "Base Especial":
             self.builder.base(BaseEspecial())
+        
+        print("Ha elegido {}.".format(base))
         
         print("3. Ingredientes")
         for i in INGREDIENTES:
             print(i)
-        ingredientes = input("Introduzca el número de la opción que desea: ")
-        if ingredientes == "1":
-            print("Ha elegido Queso")
+        ingrediente = input("Introduzca el número de la opción que desea: ")
+
+        while not validator(ingredientes, INGREDIENTES):
+            print("El ingrediente que ha elegido no está disponible, por favor, elija otro.")
+            ingredientes = input("Introduzca el número de la opción que desea: ")
+
+        if ingrediente == "Queso":
             self.builder.ingredientes(IngredienteQueso())
-        elif ingredientes == "2":
-            print("Ha elegido Jamón")
+        elif ingrediente == "Jamón":
             self.builder.ingredientes(IngredienteJamon())
-        elif ingredientes == "3":
-            print("Ha elegido Pepperoni")
+        elif ingrediente == "Pepperoni":
             self.builder.ingredientes(IngredientePepperoni())
-        elif ingredientes == "4":
-            print("Ha elegido Champiñones")
+        elif ingrediente == "Champiñones":
             self.builder.ingredientes(IngredienteChampiñones())
-        elif ingredientes == "5":
-            print("Ha elegido Piña")
+        elif ingrediente == "Piña":
             self.builder.ingredientes(IngredientePina())
+
+        print("Ha elegido {}.".format(ingrediente))
         
         print("4. Cocción")
         for i in COCCION:
             print(i)
         coccion = input("Introduzca el número de la opción que desea: ")
-        if coccion == "1":
-            print("Ha elegido Horno")
+
+        while not validator(coccion, COCCION):
+            print("La cocción que ha elegido no está disponible, por favor, elija otra.")
+            coccion = input("Introduzca el número de la opción que desea: ")
+
+        if coccion == "Horno":
             self.builder.coccion(CoccionHorno())
-        elif coccion == "2":
-            print("Ha elegido Leña")
+        elif coccion == "Leña":
             self.builder.coccion(CoccionLeña())
-        elif coccion == "3":
-            print("Ha elegido Piedra")
+        elif coccion == "Piedra":
             self.builder.coccion(CoccionPiedra())
+
+        print("Ha elegido {}.".format(coccion))
         
         print("5. Presentación")
         for i in PRESENTACION:
             print(i)
         presentacion = input("Introduzca el número de la opción que desea: ")
-        if presentacion == "1":
-            print("Ha elegido Caja")
+
+        while not validator(presentacion, PRESENTACION):
+            print("La presentación que ha elegido no está disponible, por favor, elija otra.")
+            presentacion = input("Introduzca el número de la opción que desea: ")
+
+        if presentacion == "Caja":
             self.builder.presentacion(PresentacionCaja())
-        elif presentacion == "2":
-            print("Ha elegido Bandeja")
+        elif presentacion == "Bandeja":
             self.builder.presentacion(PresentacionBandeja())
-        elif presentacion == "3":
-            print("Ha elegido Troceada")
+        elif presentacion == "Troceada":
             self.builder.presentacion(PresentacionTroceada())
+
+        print("Ha elegido {}.".format(presentacion))
         
         print("6. Maridajes")
         for i in MARIDAJES:
             print(i)
         maridajes = input("Introduzca el número de la opción que desea: ")
-        if maridajes == "1":
-            print("Ha elegido Vino")
+
+        while not validator(maridajes, MARIDAJES):
+            print("El maridaje que ha elegido no está disponible, por favor, elija otro.")
+            maridajes = input("Introduzca el número de la opción que desea: ")
+
+        if maridajes == "Vino":
             self.builder.maridajes(MaridajeVino())
-        elif maridajes == "2":
-            print("Ha elegido Cerveza")
+        elif maridajes == "Cerveza":
             self.builder.maridajes(MaridajeCerveza())
-        elif maridajes == "3":
-            print("Ha elegido Coctel")
+        elif maridajes == "Coctel":
             self.builder.maridajes(MaridajeCoctel())
+        
+        print("Ha elegido {}.".format(maridajes))
 
         print("7. Extras")
         for i in EXTRAS:
             print(i)
         extras = input("Introduzca el número de la opción que desea: ")
-        if extras == "1":
-            print("Ha elegido Borde de Queso")
+
+        while not validator(extras, EXTRAS):
+            print("El extra que ha elegido no está disponible, por favor, elija otro.")
+            extras = input("Introduzca el número de la opción que desea: ")
+
+        if extras == "Borde de Queso":
             self.builder.extras(ExtraBordeQueso())
-        elif extras == "2":
-            print("Ha elegido Trufa")
+        elif extras == "Trufa":
             self.builder.extras(ExtraTrufa())
-        elif extras == "3":
-            print("Ha elegido Caviar")
+        elif extras == "Caviar":
             self.builder.extras(ExtraCaviar())
+
+        print("Ha elegido {}.".format(extras))
 
 
 
