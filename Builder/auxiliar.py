@@ -10,3 +10,10 @@ def guardar_pizza_en_csv(nombre_pizza, ingredientes):
         
         # Escribe los detalles de la pizza en el archivo
         writer.writerow([nombre_pizza, ingredientes])
+
+def validator(lista, seleccion):
+    if seleccion in lista:
+        return True
+    else:
+        return False
+    

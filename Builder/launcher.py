@@ -1,7 +1,7 @@
 from builder import PizzaBuilder, Pizzeria
 import time
-from auxiliar import guardar_pizza_en_csv
-import tkinter as tk
+from auxiliar import guardar_pizza_en_csv, validator
+
 
 
 def launcher():
@@ -22,6 +22,9 @@ def launcher():
             print(i)
         eleccion = str(input("¿Qué pizza desea pedir?: "))
 
+        while validator(CARTA, eleccion) == False:
+            print("No tenemos esa pizza en la carta, lo sentimos.")
+            eleccion = str(input("¿Qué pizza desea pedir?: "))
 
         if eleccion == "Jamón y queso":
             print("Preparando una pizza de Jamón y queso...")
