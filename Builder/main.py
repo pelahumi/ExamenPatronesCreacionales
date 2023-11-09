@@ -7,5 +7,4 @@ if __name__ == "__main__":
     #pizzaApp()
 
     #Ejecuta el programa por la terminal
-    #launcher()
-    pass
+    launcher()
