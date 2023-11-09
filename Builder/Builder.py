@@ -237,7 +237,7 @@ class Pizzeria():
             print(i)
         ingrediente = input("Introduzca la opción que desea: ")
 
-        while not validator(ingredientes, INGREDIENTES):
+        while not validator(ingredientes, "DataBase/ingredientes.csv"):
             print("El ingrediente que ha elegido no está disponible, por favor, elija otro.")
             ingredientes = input("Introduzca la opción que desea: ")
 

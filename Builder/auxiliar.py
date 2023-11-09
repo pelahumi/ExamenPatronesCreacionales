@@ -1,4 +1,5 @@
 import csv
+import pandas as pd
 
 def guardar_pizza_en_csv(nombre_pizza, ingredientes):
     # Nombre del archivo CSV en el que se guardarán las pizzas
@@ -11,8 +12,9 @@ def guardar_pizza_en_csv(nombre_pizza, ingredientes):
         # Escribe los detalles de la pizza en el archivo
         writer.writerow([nombre_pizza, ingredientes])
 
-def validator(seleccion, lista):
-    if seleccion in lista:
+def validator(seleccion, csv):
+    data = pd.read_csv(csv, sep=';')
+    if seleccion in data.values:
         return True
     else:
         return False
