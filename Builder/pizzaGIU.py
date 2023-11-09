@@ -1,5 +1,6 @@
 import tkinter as tk
 from builder import *
+from director import Pizzeria
 import time
 from auxiliar import guardar_pizza_en_csv
 
