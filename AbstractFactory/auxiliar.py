@@ -25,7 +25,7 @@ def invertir(segundos):
     return f"{int(horas):02}:{int(minutos):02}:{int(segundos_restantes):02}"
 
 
-def comprobador(data, col):
+def comprobador(col):
     if col == "Tiempo Llegada" or col == "Hora Solicitud" or col == "Hora Intervencion":
         return True
     else: 

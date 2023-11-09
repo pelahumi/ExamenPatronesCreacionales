@@ -14,7 +14,7 @@ def launcher(factory: AbstractFactory):
 
     col = input("Introduzca el nombre de la columna a analizar: ")
 
-    if comprobador(data, col) == True:
+    if comprobador(col) == True:
         print("El resultado del análisis es: ", invertir(analisis.calcular(data, col)))
     else: 
         print("El resultado del análisis es: ", analisis.calcular(data, col))
