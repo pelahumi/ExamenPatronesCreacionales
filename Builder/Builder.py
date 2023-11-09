@@ -217,11 +217,11 @@ class Pizzeria():
         print("2. Base")
         for i in BASES:
             print(i)
-        base = input("Introduzca el número de la opción que desea: ")
+        base = input("Introduzca la opción que desea: ")
 
         while not validator(base, BASES):
             print("La base que ha elegido no está disponible, por favor, elija otra.")
-            base = input("Introduzca el número de la opción que desea: ") 
+            base = input("Introduzca la opción que desea: ") 
 
         if base == "Base de Tomate":
             self.builder.base(BaseTomate())
@@ -235,11 +235,11 @@ class Pizzeria():
         print("3. Ingredientes")
         for i in INGREDIENTES:
             print(i)
-        ingrediente = input("Introduzca el número de la opción que desea: ")
+        ingrediente = input("Introduzca la opción que desea: ")
 
         while not validator(ingredientes, INGREDIENTES):
             print("El ingrediente que ha elegido no está disponible, por favor, elija otro.")
-            ingredientes = input("Introduzca el número de la opción que desea: ")
+            ingredientes = input("Introduzca la opción que desea: ")
 
         if ingrediente == "Queso":
             self.builder.ingredientes(IngredienteQueso())
@@ -257,11 +257,11 @@ class Pizzeria():
         print("4. Cocción")
         for i in COCCION:
             print(i)
-        coccion = input("Introduzca el número de la opción que desea: ")
+        coccion = input("Introduzca la opción que desea: ")
 
         while not validator(coccion, COCCION):
             print("La cocción que ha elegido no está disponible, por favor, elija otra.")
-            coccion = input("Introduzca el número de la opción que desea: ")
+            coccion = input("Introduzca la opción que desea: ")
 
         if coccion == "Horno":
             self.builder.coccion(CoccionHorno())
@@ -275,11 +275,11 @@ class Pizzeria():
         print("5. Presentación")
         for i in PRESENTACION:
             print(i)
-        presentacion = input("Introduzca el número de la opción que desea: ")
+        presentacion = input("Introduzca la opción que desea: ")
 
         while not validator(presentacion, PRESENTACION):
             print("La presentación que ha elegido no está disponible, por favor, elija otra.")
-            presentacion = input("Introduzca el número de la opción que desea: ")
+            presentacion = input("Introduzca la opción que desea: ")
 
         if presentacion == "Caja":
             self.builder.presentacion(PresentacionCaja())
@@ -293,11 +293,11 @@ class Pizzeria():
         print("6. Maridajes")
         for i in MARIDAJES:
             print(i)
-        maridajes = input("Introduzca el número de la opción que desea: ")
+        maridajes = input("Introduzca la opción que desea: ")
 
         while not validator(maridajes, MARIDAJES):
             print("El maridaje que ha elegido no está disponible, por favor, elija otro.")
-            maridajes = input("Introduzca el número de la opción que desea: ")
+            maridajes = input("Introduzca la opción que desea: ")
 
         if maridajes == "Vino":
             self.builder.maridajes(MaridajeVino())
@@ -311,11 +311,11 @@ class Pizzeria():
         print("7. Extras")
         for i in EXTRAS:
             print(i)
-        extras = input("Introduzca el número de la opción que desea: ")
+        extras = input("Introduzca la opción que desea: ")
 
         while not validator(extras, EXTRAS):
             print("El extra que ha elegido no está disponible, por favor, elija otro.")
-            extras = input("Introduzca el número de la opción que desea: ")
+            extras = input("Introduzca la opción que desea: ")
 
         if extras == "Borde de Queso":
             self.builder.extras(ExtraBordeQueso())
