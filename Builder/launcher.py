@@ -20,9 +20,9 @@ def launcher():
         for i in CARTA:
             print(i)
 
-        eleccion = input("¿Qué pizza desea pedir?: ")
+        eleccion = str(input("¿Qué pizza desea pedir?: "))
 
-        while validator(eleccion, CARTA) is False:
+        while not validator(eleccion):
             print("La pizza que ha elegido no está en la carta, por favor, elija otra.")
             eleccion = input("¿Qué pizza desea pedir?: ")
 
