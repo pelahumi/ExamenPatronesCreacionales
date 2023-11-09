@@ -1,6 +1,7 @@
 from __future__ import annotations
 from abc import ABC, abstractmethod
 from auxiliar import *
+import matplotlib.pyplot as plt
 
 #Abstract Factory para las operaciones de estadística
 class AbstractFactory(ABC):
@@ -9,29 +10,62 @@ class AbstractFactory(ABC):
     """
 
     @abstractmethod
-    def crear_moda(self) -> AbstractAnalisis:
+    def crear_analisis(self) -> AbstractAnalisis:
         pass
 
     @abstractmethod
-    def crear_media(self) -> AbstractAnalisis:
-        pass
-
-    @abstractmethod
-    def crear_mediana(self) -> AbstractAnalisis:
+    def crear_grafico(self) -> AbstractGrafico:
         pass
 
 #Definimos la Factoria concreta para las operaciones de estadística
 
-class AnalisisFactory(AbstractFactory):
+class HistModeFactory(AbstractFactory):
 
-    def crear_moda(self):
+    def crear_analisis(self) -> AbstractAnalisis:
         return Moda()
+
+    def crear_grafico(self) -> AbstractGrafico:
+        return Histograma()
     
-    def crear_media(self):
+class HistMeanFactory(AbstractFactory):
+
+    def crear_analisis(self) -> AbstractAnalisis:
         return Media()
 
-    def crear_mediana(self):
+    def crear_grafico(self) -> AbstractGrafico:
+        return Histograma()
+
+class HistMedianFactory(AbstractFactory):
+    
+    def crear_analisis(self) -> AbstractAnalisis:
         return Mediana()
+    
+    def crear_grafico(self) -> AbstractGrafico:
+        return Histograma()
+
+class BarModeFactory(AbstractFactory):
+
+    def crear_analisis(self) -> AbstractAnalisis:
+        return Moda()
+
+    def crear_grafico(self) -> AbstractGrafico:
+        return Barra()
+
+class BarMeanFactory(AbstractFactory):
+
+    def crear_analisis(self) -> AbstractAnalisis:
+        return Media()
+
+    def crear_grafico(self) -> AbstractGrafico:
+        return Barra()
+
+class BarMedianFactory(AbstractFactory):
+        
+    def crear_analisis(self) -> AbstractAnalisis:
+        return Mediana()
+        
+    def crear_grafico(self) -> AbstractGrafico:
+        return Barra()
 
 
 #Definimos la clase abstracta del producto
@@ -56,59 +90,29 @@ class Mediana(AbstractAnalisis):
         
     def calcular(self, data, col):
         return data[col].median()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def launcher(factory: AbstractFactory):
-    moda = factory.crear_moda()
-    media = factory.crear_media()
-    mediana = factory.crear_mediana()
-
-    col = str(input("Introduce la columna sobre la que quieres realizar el análisis: "))
-
-    calculo_moda = moda.calcular(data,col) 
-    calculo_mediana = mediana.calcular(data,col)
-    calculo_media = media.calcular(data,col)
     
 
-    if comprobador(data,col) == True:
-        calculo_moda = invertir(calculo_moda)
-        calculo_mediana = invertir(calculo_mediana)
-        calculo_media = invertir(calculo_media)
+#Definimos la clase abstracta del producto
+class AbstractGrafico(ABC):
 
-    else:
+    @abstractmethod
+    def dibujar(self) -> int:
         pass
 
-    print("La moda de la columna", col, "es:", calculo_moda)
-    print("\n")
-    print("La media de la columna", col, "es:", calculo_media)
-    print("\n")
-    print("La mediana de la columna", col, "es:", calculo_mediana)
+#Definimos las clases concretas para cada producto
+class Histograma(AbstractGrafico):
 
+    def dibujar(self, data, col):
+        plt.hist([data[col], data["Hora Intervencion"]], bins=20)
+        plt.show()
 
-if __name__ == "__main__":
-    launcher(AnalisisFactory())
+class Barra(AbstractGrafico):
+        
+    def dibujar(self, data, col):
+        plt.bar(data[col].unique(), data[col].value_counts())
+        plt.xticks(data[col].unique(), rotation = 90)
+        plt.show()
+
 
 
 
