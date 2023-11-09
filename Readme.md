@@ -24,11 +24,11 @@ Es la clase abstracta ```AbstractFactory```, en la que definimos los métodos pa
 
 Estas clases implementan la clase ```AbstractFactory``` y modifican sus métodos para crear productos específicos. Por ejemplo, la clase ```HistMeanFactory``` lo que hace es crear un producto que calcule la media y haga un histograma.
 
-### 3) Concrete Products
+#### 3) Concrete Products
 
 Estas clases son el resultado de las concrete factories. Siguiendo con el ejemplo anterior, la clase ```HistMeanFactory``` crea un producto de la clase ```Media``` y de ```Histograma```.
 
-### 4) Abstract Products
+#### 4) Abstract Products
 
 Estas clases abstractas actúan como interfaces para crear los concrete products. La clase ```Media``` hereda de su clase abstracta ```AbstractAnalisis``` y la clase ```Histograma``` de ```AbstractGrafico```.
 
